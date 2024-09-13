@@ -26,7 +26,7 @@ pipeline {
                         echo 'Preparing to send success email with console log attachment for Unit and Integration Tests...'
                         // Email with Jenkins console log attached
                         emailext (
-                            to: 'baani1903@gmail.com',
+                            to: 'baaniahuja238@gmail.com',
                             subject: "Unit and Integration Tests Successful",
                             body: "The unit and integration tests completed successfully. The console log is attached.",
                             attachLog: true // Attach Jenkins build logs (console output)
@@ -39,7 +39,7 @@ pipeline {
                         echo 'Preparing to send failure email with console log attachment for Unit and Integration Tests...'
                         // Email with Jenkins console log attached
                         emailext (
-                            to: 'baani1903@gmail.com',
+                            to: 'baaniahuja238@gmail.com',
                             subject: "Unit and Integration Tests Failed",
                             body: "The unit and integration tests failed. The console log is attached.",
                             attachLog: true // Attach Jenkins build logs (console output)
@@ -74,7 +74,7 @@ pipeline {
                         echo 'Preparing to send success email with console log attachment for Security Scan...'
                         // Email with Jenkins console log attached
                         emailext (
-                            to: 'baani1903@gmail.com',
+                            to: 'baaniahuja238@gmail.com',
                             subject: "Security Scan Successful",
                             body: "The security scan completed successfully. The console log is attached.",
                             attachLog: true // Attach Jenkins build logs (console output)
@@ -87,7 +87,7 @@ pipeline {
                         echo 'Preparing to send failure email with console log attachment for Security Scan...'
                         // Email with Jenkins console log attached
                         emailext (
-                            to: 'baani1903@gmail.com',
+                            to: 'baaniahuja238@gmail.com',
                             subject: "Security Scan Failed",
                             body: "The security scan failed. The console log is attached.",
                             attachLog: true // Attach Jenkins build logs (console output)
