@@ -12,10 +12,8 @@ pipeline {
                 echo 'Task: Run unit and integration tests.'
                 echo 'Tool: JUnit for unit tests, TestNG for integration tests'
                 script {
-                    // Capture the log output to a file
                     bat 'echo Unit and Integration Tests Log > unit_integration_tests_log.txt'
                 }
-                // Ensure the file is created
                 script {
                     bat 'dir /B'
                 }
@@ -24,12 +22,11 @@ pipeline {
                 success {
                     script {
                         echo 'Preparing to send success email with console log attachment for Unit and Integration Tests...'
-                        // Email with Jenkins console log attached
                         emailext (
                             to: 'baaniahuja238@gmail.com',
                             subject: "Unit and Integration Tests Successful",
                             body: "The unit and integration tests completed successfully. The console log is attached.",
-                            attachLog: true // Attach Jenkins build logs (console output)
+                            attachLog: true
                         )
                         echo 'Success email with console log attachment sent for Unit and Integration Tests.'
                     }
@@ -37,12 +34,11 @@ pipeline {
                 failure {
                     script {
                         echo 'Preparing to send failure email with console log attachment for Unit and Integration Tests...'
-                        // Email with Jenkins console log attached
                         emailext (
                             to: 'baaniahuja238@gmail.com',
                             subject: "Unit and Integration Tests Failed",
                             body: "The unit and integration tests failed. The console log is attached.",
-                            attachLog: true // Attach Jenkins build logs (console output)
+                            attachLog: true 
                         )
                         echo 'Failure email with console log attachment sent for Unit and Integration Tests.'
                     }
@@ -60,10 +56,10 @@ pipeline {
                 echo 'Task: Perform a security scan to identify vulnerabilities.'
                 echo 'Tool: OWASP Dependency-Check'
                 script {
-                    // Capture the log output to a file
+                  
                     bat 'echo Security Scan Log > security_scan_log.txt'
                 }
-                // Ensure the file is created
+         
                 script {
                     bat 'dir /B'
                 }
@@ -72,12 +68,12 @@ pipeline {
                 success {
                     script {
                         echo 'Preparing to send success email with console log attachment for Security Scan...'
-                        // Email with Jenkins console log attached
+                     
                         emailext (
                             to: 'baaniahuja238@gmail.com',
                             subject: "Security Scan Successful",
                             body: "The security scan completed successfully. The console log is attached.",
-                            attachLog: true // Attach Jenkins build logs (console output)
+                            attachLog: true 
                         )
                         echo 'Success email with console log attachment sent for Security Scan.'
                     }
@@ -85,12 +81,12 @@ pipeline {
                 failure {
                     script {
                         echo 'Preparing to send failure email with console log attachment for Security Scan...'
-                        // Email with Jenkins console log attached
+                       
                         emailext (
                             to: 'baaniahuja238@gmail.com',
                             subject: "Security Scan Failed",
                             body: "The security scan failed. The console log is attached.",
-                            attachLog: true // Attach Jenkins build logs (console output)
+                            attachLog: true 
                         )
                         echo 'Failure email with console log attachment sent for Security Scan.'
                     }
